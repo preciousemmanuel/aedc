@@ -35,8 +35,8 @@ class _LoginScreenState extends State<LoginScreen> {
 @override
   initState(){
     super.initState();
-  _emailController.text="ebukaegonu@yahoo.com";
-  _passwordController.text="ebu111";
+  _emailController.text="test@thenextier.com";
+  _passwordController.text="test@1";
 }
 
 submitLogin()async{

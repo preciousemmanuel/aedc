@@ -31,8 +31,13 @@ dependencies:
     sdk: flutter
  
   dio: ^4.0.4
+  intl:
   shared_preferences: ^2.0.15
   image_picker: ^0.8.4+11
+  http_parser:
+  cloudinary_public: ^0.8.2
+  multi_image_picker:
+  geolocator: ^8.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

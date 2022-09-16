@@ -12,6 +12,7 @@ class GeneralTextBox extends StatefulWidget {
   final String placeHolderText;
   final dynamic validator;
   final Function? onChange;
+  final bool? isNumeric;
 
   const GeneralTextBox({
     Key? key,
@@ -19,7 +20,8 @@ class GeneralTextBox extends StatefulWidget {
     required this.labelTitle,
     required this.placeHolderText,
     this.validator,
-    this.onChange
+    this.onChange,
+    this.isNumeric=false
   }) : super(key: key);
 
   @override
@@ -44,7 +46,7 @@ class _GeneralTextBoxState extends State<GeneralTextBox> {
           onChanged:(text)=> widget.onChange!(text),
           validator: widget.validator,
           controller: widget.controller,
-          keyboardType: TextInputType.text,
+          keyboardType:widget.isNumeric!? TextInputType.number: TextInputType.text,
           style: const TextStyle(
             fontSize: Sizes.dimen_16,
             fontWeight: FontWeight.w400,

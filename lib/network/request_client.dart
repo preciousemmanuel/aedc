@@ -51,28 +51,27 @@ class ReqClient {
   }
 
   Future<Response> postWithAuthClient(url, data, {withMedia = false}) async {
-    final prefs = await SharedPreferences.getInstance();
-    final String? token = prefs.getString('token');
-    final int? id = prefs.getInt('userId');
-    print(id.toString());
+    
     return await dio.post(url,
         data: data,
-        options: Options(
-          headers: withMedia
-              ? {
-                  // 'Accept': '*/*',
-                  'authorizationToken': token,
+        // options: Options(
+        //   headers: withMedia
+        //       ? {
+        //           // 'Accept': '*/*',
+        //           // 'authorizationToken': token,
                  
-                  'Content-Type': 'multipart/form-data',
-                  "authid": id
-                }
-              : {
-                  // 'Accept': '*/*',
-                  'authorizationToken': token,
+        //           'Content-Type': 'multipart/form-data',
+        //           // "authid": id
+        //         }
+        //       : {
+        //           // 'Accept': '*/*',
+        //           // 'authorizationToken': token,
                  
-                  "authid": id
-                },
-        ));
+        //           // "authid": id
+        //         },
+        // )
+        
+        );
   }
 
   Future<Response> puttWithAuthClient(url, data) async {

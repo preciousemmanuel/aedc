@@ -52,7 +52,7 @@ class NetworkAssessmentScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      menu.MenuItem(img: "assets/global.png", ontap: ()=>
+                      menu.MenuItem(img: "assets/failure.png", ontap: ()=>
                         Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -62,13 +62,13 @@ class NetworkAssessmentScreen extends StatelessWidget {
                     ,
                        title: "Network Assessment 33kv"),
                   
-                      menu.MenuItem(img: "assets/global.png", ontap: ()=>Navigator.push(
+                      menu.MenuItem(img: "assets/failure.png", ontap: ()=>Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (_) => NetworkAssessmentEleven()
                       )
                       ), title: "Network Assessments 11kv"),
-                      menu.MenuItem(img: "assets/global.png", ontap: ()=>Navigator.push(
+                      menu.MenuItem(img: "assets/failure.png", ontap: ()=>Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (_) => NetworkAssessmentDt()
@@ -82,17 +82,17 @@ class NetworkAssessmentScreen extends StatelessWidget {
 
                   SizedBox(height: Sizes.dimen_10,),
 
-                //  Row(
-                //    children: [
-                //       menu.MenuItem(img: "assets/global.png", ontap: ()=>Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (_) => NetworkAssessmentSubStation()
-                //       )
-                //       ), title: "Network Assessments Substation"),
+                 Row(
+                   children: [
+                      menu.MenuItem(img: "assets/failure.png", ontap: ()=>Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => NetworkAssessmentSubStation()
+                      )
+                      ), title: "Network Assessments Substation"),
                   
-                //    ],
-                //  )
+                   ],
+                 )
               ],
             ),
 

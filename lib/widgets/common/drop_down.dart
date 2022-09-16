@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 
 class DropDownList extends StatefulWidget {
   final String title;
+  final String? fieldMap;
   final value;
   final List items;
   final Function onChange;
-  const DropDownList({Key? key,required this.items,required this.title,required this.value,required this.onChange}) : super(key: key);
+ final bool? isMap;
+  const DropDownList({Key? key,required this.items,required this.title,required this.value,required this.onChange,this.isMap=false,this.fieldMap}) : super(key: key);
 
   @override
   State<DropDownList> createState() => _DropDownListState();
@@ -32,11 +34,12 @@ class _DropDownListState extends State<DropDownList> {
                 hint: Text(widget.title),
                 items: widget.items.map<DropdownMenuItem<dynamic>>((identity) {
                   return DropdownMenuItem(
-                    child: Text(identity),
-                    value: identity,
+                    child: widget.isMap! ?Text(identity[widget.fieldMap]) : Text(identity),
+                    value: widget.isMap! ?identity:identity,
                   );
                 }).toList(),
                 onChanged:(dynamic e){
+                  print("err#${e}");
 widget.onChange(e);
                 }
           ),)

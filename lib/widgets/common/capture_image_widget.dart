@@ -23,7 +23,13 @@ class CaptureImage extends StatelessWidget {
           children: [
               Icon(Icons.photo_camera),
               SizedBox(width: Sizes.dimen_10,),
-              Text(title)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:[
+                Text(title),
+                SizedBox(height: Sizes.dimen_7,),
+                Text("You can add upto 5 images",style: TextStyle(fontSize: Sizes.dimen_10),)
+              ] )
         ]),
       ),
     );
